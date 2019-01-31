@@ -9,12 +9,17 @@
 namespace app\controllers;
 
 
+use app\models\Student;
 use yii\web\Controller;
 
 class IndexController extends Controller
 {
     public function actionIndex()
     {
-        echo "HelloWorld!!!";
+        $this->layout = false;
+//        echo "HelloWorld!!!";
+//        return $this->render('index');
+        $student = Student::find()->one()->toArray();
+        return $this->render('index', ['row' => $student]);
     }
 }
