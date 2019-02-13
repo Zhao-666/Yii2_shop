@@ -16,10 +16,10 @@ class IndexController extends Controller
 {
     public function actionIndex()
     {
-        $this->layout = false;
+        $this->layout = 'layout1';
 //        echo "HelloWorld!!!";
 //        return $this->render('index');
-        $student = Student::find()->one()->toArray();
-        return $this->render('index', ['row' => $student]);
+//        $student = Student::find()->one()->toArray();
+        return $this->render('index');
     }
 }
